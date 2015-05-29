@@ -27,3 +27,4 @@ script:
   - docker tag -f registry.docker/mono:latest registry.docker/mono:4.0.1
   - docker tag -f registry.docker/mono:onbuild registry.docker/mono:4.0.0-onbuild
   - docker push registry.docker/mono
+
