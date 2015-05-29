@@ -26,7 +26,7 @@ This image will run stand-alone Mono console apps.
 
 This example Dockerfile will run an executable called `TestingConsoleApp.exe`.
 
-    FROM mono:3.10-onbuild
+    FROM registry.docker/mono:3.10-onbuild
 	CMD [ "mono",  "./TestingConsoleApp.exe" ]
 
 Place this file in the root of your app, next to the `.sln` solution file. Modify the exectuable name to match what you want to run.

@@ -1,4 +1,4 @@
-FROM mono:3.8.0
+FROM registry.docker/mono:3.8.0
 
 MAINTAINER Jo Shields <jo.shields@xamarin.com>
 

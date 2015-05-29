@@ -1,4 +1,4 @@
-FROM debian:wheezy
+FROM registry.docker/debian:wheezy
 
 MAINTAINER Jo Shields <jo.shields@xamarin.com>
 
