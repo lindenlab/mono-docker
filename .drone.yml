@@ -1,0 +1,29 @@
+image: registry.docker/buildpack-deps:scm
+volumes:
+  - /var/run/docker.sock
+script:
+  - docker build -t registry.docker/mono:3.10.0 3.10.0
+  - docker tag -f registry.docker/mono:3.10 registry.docker/mono:3.10.0
+  - docker build -t registry.docker/mono:3.10.0-onbuild 3.10.0/onbuild
+  - docker tag -f registry.docker/mono:3.10-onbuild registry.docker/mono:3.10.0-onbuild
+  - docker build -t registry.docker/mono:3.12.1 3.12.0
+  - docker tag -f registry.docker/mono:3.12.1 registry.docker/mono:3.12.1
+  - docker tag -f registry.docker/mono:3.12 registry.docker/mono:3.12.1
+  - docker tag -f registry.docker/mono:3 registry.docker/mono:3.12.1
+  - docker build -t registry.docker/mono:3.12.0-onbuild 3.12.0/onbuild
+  - docker tag -f registry.docker/mono:3.12-onbuild registry.docker/mono:3.12.0-onbuild
+  - docker tag -f registry.docker/mono:3-onbuild registry.docker/mono:3.12.0-onbuild
+  - docker build -t registry.docker/mono:3.8.0 3.8.0
+  - docker tag -f registry.docker/mono:3.8 registry.docker/mono:3.8.0
+  - docker build -t registry.docker/mono:3.8.0-onbuild 3.8.0/onbuild
+  - docker tag -f registry.docker/mono:3.8-onbuild registry.docker/mono:3.8.0-onbuild
+  - docker build -t registry.docker/mono:4.0.1 4.0.0
+  - docker tag -f registry.docker/mono:4.0.0 registry.docker/mono:4.0.1
+  - docker tag -f registry.docker/mono:4.0 registry.docker/mono:4.0.1
+  - docker tag -f registry.docker/mono:4 registry.docker/mono:4.0.1
+  - docker build -t registry.docker/mono:4.0.0-onbuild 4.0.0/onbuild
+  - docker tag -f registry.docker/mono:4.0-onbuild registry.docker/mono:4.0.0-onbuild
+  - docker tag -f registry.docker/mono:4-onbuild registry.docker/mono:4.0.0-onbuild
+  - docker tag -f registry.docker/mono:latest registry.docker/mono:4.0.1
+  - docker tag -f registry.docker/mono:onbuild registry.docker/mono:4.0.0-onbuild
+  - docker push registry.docker/mono
